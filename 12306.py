@@ -87,10 +87,10 @@ if __name__ == "__main__":
             "note": item[1],  # 备注信息在1号位置
         }
         #车次的某些信息是‘’，以防数据可视化产生异常，将其赋值‘-’
-        for pos in name:
-            if data[pos] == "":
-                data[pos] = "-"
-        tb.add_row([data["train_code"],data["from_station_name"],data["to_station_name"],data["start_time"],data["arrive_time"],data["lishi"],data["swz"],data["first"],data["second"],data["gjrw"],data["rw"],data["yw"],data["dw"],data["rz"],data["yz"],data["wz"],data["qt"],data["note"]])
+        for j in name:
+            if data[j] == "":
+                data[j] = "-"
+        tb.add_row([data["train_code"],station_name[data["from_station_name"]],station_name[data["to_station_name"]],data["start_time"],data["arrive_time"],data["lishi"],data["swz"],data["first"],data["second"],data["gjrw"],data["rw"],data["yw"],data["dw"],data["rz"],data["yz"],data["wz"],data["qt"],data["note"]])
 
 #打印表格
 print(tb)
